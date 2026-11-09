@@ -8,3 +8,6 @@ I created a Pilates studio assistant that helps customers check available class 
 ## AI Assistance
 
 I used ChatGPT to help generate and explain portions of the class code in this project. The generated code and explanations are documented separately.
+## Module 11 Note
+
+I was unable to run Ollama locally due to storage limitations on my laptop. I completed the portions of the lab that could be done using Python without Ollama.

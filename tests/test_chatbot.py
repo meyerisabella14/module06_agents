@@ -1,6 +1,8 @@
 from chatbot import SupportChatbot
 from order_tool import OrderLookup
 from stock_tool import StockLookup
+from mock_model import MockModel
+from echo_model import EchoModel
 
 
 def make_bot():
@@ -12,6 +14,7 @@ def make_bot():
         "Be friendly.",
         OrderLookup(orders),
         StockLookup(stock),
+        MockModel(),
     )
 
 
@@ -73,3 +76,9 @@ def test_stock_question_uses_tool():
     assert bot.respond("Is the rain jacket in stock?") == (
         "We have 12 of the rain jacket in stock."
     )
+
+
+def test_echo_model():
+    bot = make_bot()
+    bot.model = EchoModel()
+    assert bot.respond("good morning") == "You said: good morning"
